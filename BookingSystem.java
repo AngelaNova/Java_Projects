@@ -1,0 +1,88 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class BookingSystem {
+  
+  private static String[] typeOfRooms = {"double","queen","king"};
+  private static Random r = new Random(123);
+  
+  //returns a random String from the above array. 
+  private static String getRandomType(){
+    int index = r.nextInt(typeOfRooms.length);
+    return typeOfRooms[index];
+  }
+  //returns a random number of rooms between 5 and 50.
+  private static int getRandomNumberOfRooms(){
+    return r.nextInt(50)+1;
+  }
+  
+  public static void main(String[] args){
+    
+  
+    
+    System.out.println("Welcome to the COMP202 booking system.");
+    Scanner userInput= new Scanner(System.in);
+    System.out.println("Please provide the name of the hotel you would like to make a reservation.");
+    String nameOfTheHotel=userInput.nextLine();
+    //declaration of the Room array
+    Room[] arrayOfRooms= new Room[getRandomNumberOfRooms()];
+    //initiallizing the elements of the array
+    for (int i=0; i<arrayOfRooms.length; i++){
+      arrayOfRooms[i]= new Room(getRandomType()); 
+    }
+    //declaration and initialization of the object Hotel
+    Hotel hotel= new Hotel(nameOfTheHotel,arrayOfRooms);
+    System.out.println("Welcome to " + nameOfTheHotel + "! Choose one of the following options:");
+    
+    //printing the menu for the first time
+    System.out.println(" 1. Make a reservation \n 2. Cancel a reservation \n 3. See an invoice \n 4. See the hotel info \n 5. Exit the booking system");
+    //takes as input from the user an integer that correspsonds to one of the options on the menu 
+    int input= userInput.nextInt();
+    userInput.nextLine();
+    //using a while loop to allow the user to use the menu as long as the user wants
+    //input 5 corresponds to the exit, thus to the end of the menu
+    while (input!=5){
+      //Create a reservation
+      if (input==1){
+        System.out.println("Please enter your name to make a reservation.");
+        String name;
+        name=userInput.next();
+        System.out.println("What type of room would you like to book?");
+        String type;
+        type=userInput.next();
+        //calling a method from the class Hotel
+        hotel.createReservation(name, type);
+      }
+      //Cancel a reservation
+      if (input==2){
+        System.out.println("Please enter your name to cancel a reservation.");
+        String name=userInput.next();
+        System.out.println("What type of room did you book?");
+        String type=userInput.next();
+        //calling a method from the class Hotel
+        hotel.cancelReservation(name,type); 
+      }
+      if (input==3){
+        System.out.println("Please enter your name to view how much you owe to the hotel.");
+        String name=userInput.next();
+        userInput.nextLine();
+        //prints how much a specific costumer owes to the hotel
+        hotel.printInvoice(name); 
+      }
+      if (input==4){
+        //prints information about the hotel
+        System.out.println(hotel);
+      }
+      //gives the menu to the user again and asks the user to choose an option again
+      System.out.println(" 1. Make a reservation \n 2. Cancel a reservation \n 3. See an invoice \n 4. See the hotel info \n 5. Exit the booking system");
+      input= userInput.nextInt();
+      userInput.nextLine();
+      
+    } //end of the while loop
+    
+    System.out.println("It was a pleasure doing business with you!");
+    
+  } //the program main method ends here
+  
+} //end of the program
+
