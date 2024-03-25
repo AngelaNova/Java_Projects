@@ -38,23 +38,7 @@ The **Twitter** project replicates basic functionalities of the Twitter platform
 - **Trending Topics:** Analyzes tweet data to determine the most frequently used words, excluding stop words.
 - **File I/O:** Utilizes file reading and writing operations to manage tweet data persistence.
 
-## Usage
-
-1. **Compile:** Compile the Java files for each project using a Java compiler. For example:
-   ```bash
-   javac Booking.java
-   javac Mexico.java
-   javac TicTacToe.java
-   javac Twitter.java
-   ```
-
-2. **Execute:** Run the main method of each project's main class to use its functionalities. For example:
-   ```bash
-   java Booking
-   java Mexico
-   java TicTacToe
-   java Twitter
-   ```
-
 3. **Follow Prompts:** Follow the prompts or instructions provided by each project to interact with them, provide input, and observe the output.
+
+   **Thank you for reading!**
 
