@@ -234,6 +234,5 @@ public class Twitter {
     System.out.println(example.trendingTopic());
   }
   
-  /* ADD YOUR CODE HERE */
   
 }
