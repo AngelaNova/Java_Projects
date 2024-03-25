@@ -1,5 +1,3 @@
-//Angela Novakovic 260727217
-
 //importing useful methods from other classes
 import java.util.Scanner;
 import java.util.Arrays;
@@ -112,10 +110,8 @@ public class TicTacToe {
   
   
   
-  
-  //Check for obvious move method
+
   //This method takes as input the board (2D array of char) and return a boolean value
-  //THE HARDEST METHOD
   public static boolean checkForObviousMove(char[][] board){
     boolean value=false;
     //If conditional statement are there to not allow the AI to play more than one time
