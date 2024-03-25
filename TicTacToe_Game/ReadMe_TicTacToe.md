@@ -7,7 +7,6 @@ This Java program implements a simple Tic Tac Toe game where a player competes a
 
 ## How to Use
 1. Compile the `TicTacToe.java` file.
-2. Run the `TicTacToe` class.
 
 ```bash
 java TicTacToe
