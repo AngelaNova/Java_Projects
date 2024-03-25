@@ -1,5 +1,3 @@
-// Angela Novakovic 260727217
-
 import java.io.* ;
 import java.util.HashSet;
 
